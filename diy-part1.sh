@@ -15,16 +15,10 @@
 
 # Add a feed source
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-src-git packages https://github.com/coolsnowwolf/packages
-src-git luci https://github.com/coolsnowwolf/luci
-src-git routing https://git.openwrt.org/feed/routing.git
-src-git telephony https://git.openwrt.org/feed/telephony.git
-src-git freifunk https://github.com/freifunk/openwrt-packages.git
-src-git video https://github.com/openwrt/video.git
-src-git targets https://github.com/openwrt/targets.git
-src-git management https://github.com/openwrt-management/packages.git
-src-git oldpackages http://git.openwrt.org/packages.git
-src-link custom /usr/src/openwrt/custom-feed
-src-git helloworld https://github.com/fw876/helloworld
-src-git lienol https://github.com/Lienol/openwrt-package
-src-git kenzo https://github.com/kenzok8/openwrt-packages
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall.git' feeds.conf.default
+sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone https://github.com/ujincn/luci-app-smartdns-compat.git package/luci-app-smartdns-compat
+git clone https://github.com/ujincn/smartdns.git package/smartdns
+git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/luci-app-adguardhome
